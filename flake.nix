@@ -1,5 +1,5 @@
 {
-  description = "Dev Shell For Meteroite";
+  description = "Dev Shell For Lambda";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
@@ -17,7 +17,7 @@
 
       in {
         devShell = pkgs.devshell.mkShell {
-          name = "meteorite-dev-shell";
+          name = "lambda-dev-shell";
           packages = with pkgs; [ neovim-nightly stylua selene sumneko-lua-language-server alejandra rnix-lsp ];
         };
       });

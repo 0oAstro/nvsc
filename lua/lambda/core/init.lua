@@ -1,9 +1,13 @@
-vim.opt.shadafile = ""
-
+_G.MODULES = {
+	["core"] = true, ["treesitter"] = true, ["colors"] = true, ["statusline"] = false, ["fuzzy"] = true } -- modules to use
 vim.cmd [[
     runtime! plugin/**/*.vim
     runtime! plugin/**/*.lua
 ]]
+
+vim.opt.shadafile = ""
+
+require("packer_compiled")
 
 vim.cmd [[
 	rshada!
@@ -13,7 +17,7 @@ vim.cmd [[
 ]]
 
 vim.defer_fn(function()
-	require("cosmos.ext")
+	require("lambda.modules")
 	vim.cmd [[ 
 		silent! bufdo e
 	]]

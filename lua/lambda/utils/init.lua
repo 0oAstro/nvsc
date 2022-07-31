@@ -20,7 +20,7 @@ end
 utils.bootstrap = function (url)
   local dir_name = url:match("^.*%/(.*)")
 local fn = vim.fn
-   local install_path = string.format("%s/site/pack/paqs/opt/%s", fn.stdpath("data"), dir_name)
+   local install_path = string.format("%s/site/pack/packer/opt/%s", fn.stdpath("data"), dir_name)
 
    if fn.empty(fn.glob(install_path)) > 0 then
       print(string.format("Bootstrapping %s...", dir_name))
